@@ -1,17 +1,8 @@
 import { CopyButton } from "@/components/custom/CopyButton";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { ContactItem } from "@/types/contact";
-import { OutsideLink, OverrideProps } from "fanyucomponents";
+import { OutsideLink, } from "fanyucomponents";
 import { cn } from "@/utils/className";
 
-export type ContactCardProps = OverrideProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  {
-    item: ContactItem;
-  }
->;
-export const ContactCard = ({ className, item, ...rest }: ContactCardProps) => {
-  const Language = useLanguage();
+export const ContactCard = ({ className, item, ...rest }) => {
   const {
     src: imageSrc,
     style: imageStyle,

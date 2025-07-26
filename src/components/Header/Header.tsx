@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Collapse } from "fanyucomponents";
 import { routes } from "./routes";
@@ -14,12 +13,10 @@ export const Header = () => {
       <nav className="flex flex-col" role="navigation" aria-label="主導航">
         <div className="container flex items-center justify-between flex-nowrap px-8 py-4 w-full">
           <Link href="/" className="h-full">
-            <Image
-              priority
+            {/*eslint-disable-next-line @next/next/no-img-element*/}
+            <img
               alt="Logo"
               src="/logo.png"
-              width={1500}
-              height={500}
               className="h-16 w-auto object-contain"
             />
           </Link>
