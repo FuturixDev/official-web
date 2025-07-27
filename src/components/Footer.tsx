@@ -4,7 +4,7 @@ import { CopyrightOutlined } from "@ant-design/icons";
 export const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full flex flex-1 bg-black border-[var(--border-color)] border-t-1">
+    <footer className="w-full flex flex-1 bg-black">
       <div className="container flex justify-between flex-col md:flex-row gap-4 md:gap-0">
         {/* 左側內容 */}
         <div className="flex flex-col">

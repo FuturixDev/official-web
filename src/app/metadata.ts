@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     icon: [{ rel: "icon", url: "/favicon.ico" }],
   },
   authors: [
-    { name: "Fanyu", url: "https://github.com/fanyuuu2006" },
+    { name: "FanYu", url: "https://github.com/fanyuuu2006" },
   ],
 
   keywords: [

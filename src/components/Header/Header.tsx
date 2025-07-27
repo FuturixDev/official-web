@@ -9,9 +9,9 @@ export const Header = () => {
   const [menuShow, setMenuShow] = useState<boolean>(false);
 
   return (
-    <header className="fixed top-0 z-1080 w-full bg-[var(--background-color)]/90 backdrop-blur-md border-[var(--border-color)] border-b-1">
+    <header className="fixed top-0 z-1080 w-full bg-[var(--background-color)]/90 backdrop-blur-md">
       <nav className="flex flex-col" role="navigation" aria-label="主導航">
-        <div className="container flex items-center justify-between flex-nowrap px-8 py-4 w-full">
+        <div className="container flex items-center justify-between flex-nowrap w-full">
           <Link href="/" className="h-full">
             {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img
@@ -31,11 +31,7 @@ export const Header = () => {
           </div>
           <div className="hidden lg:flex text-2xl font-bold gap-6">
             {routes.map((item) => (
-              <Link
-                className="hover:underline-spread"
-                key={item.href}
-                href={item.href}
-              >
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}
@@ -43,7 +39,7 @@ export const Header = () => {
         </div>
         <Collapse
           state={menuShow}
-          className="slide-collapse lg:hidden will-change-[height]"
+          className="slide-collapse lg:hidden"
           id="mobile-nav"
         >
           <div className="flex flex-col w-full text-2xl font-bold text-center">

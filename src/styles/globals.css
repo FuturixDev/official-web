@@ -4,20 +4,20 @@
 @layer base {
   :root {
     /* === 顏色系統 === */
-    --background-color: #0a0a0a;
-    --background-color-primary: #313131;
-    --background-color-secondary: #171717;
-    --background-color-tertiary: #0f0f0f;
+    --background-color: #0c0c0c;
+    --background-color-primary: #1a1a1a;
+    --background-color-secondary: #141414;
+    --background-color-tertiary: #111111;
 
-    --text-color: #ffffff;
-    --text-color-primary: #3b82f6; /* Tailwind 的 blue-500 */
-    --text-color-secondary: #8b5cf6; /* Tailwind 的 violet-500 */
-    --text-color-tertiary: #22c55e; /* Tailwind 的 amber-500 */
-    --text-color-quaternary: #f59e0b; /* Tailwind 的 yellow-500 */
-    --text-color-muted: #aaaaaa;
+    --text-color: #f5f5f5;
+    --text-color-primary: #00ffff;
+    --text-color-secondary: #00b5fd;
+    --text-color-tertiary: #10d9c4; /* 青綠色系配合主色調 */
+    --text-color-quaternary: #64b5f6; /* 柔和藍色 */
+    --text-color-muted: #b0b0b0;
 
-    --border-color: #333333cc;
-    --border-color-light: #525252;
+    --border-color: #2a2a2acc;
+    --border-color-light: #404040;
     --border-color-focus: var(--text-color-primary);
 
     /* === 效果參數 === */
@@ -67,12 +67,12 @@
   }
 
   /* === Hero 區塊樣式 === */
-  #hero {
+  /* #hero {
     position: relative;
     background: url("/cbg.jpg") center/cover no-repeat;
-    background-attachment: fixed; /* 視差效果 */
-  }
-
+    background-attachment: fixed; 
+  } */
+  /* 
   #hero::before {
     content: "";
     position: absolute;
@@ -80,8 +80,8 @@
     background-color: var(--background-color);
     opacity: 0.7;
     z-index: 0;
-    pointer-events: none; /* 防止 hover 等事件被遮罩擋住 */
-  }
+    pointer-events: none; 
+  } */
 
   /* === 按鈕系統 === */
   button,
@@ -259,6 +259,7 @@
   .slide-collapse {
     transition: height var(--transition-normal) ease-out;
     overflow: hidden;
+    will-change: height;
   }
 
   /* === 自訂滾動條 === */
