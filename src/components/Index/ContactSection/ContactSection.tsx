@@ -5,7 +5,6 @@ import { cn } from "@/utils/className";
 import { MailOutlined, SendOutlined } from "@ant-design/icons";
 import { OutsideLink } from "fanyucomponents";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useCallback, useState } from "react";
 
 const email = "futurixdev6@gmail.com";
@@ -21,20 +20,48 @@ const contactInfo = [
   },
 ];
 
-// // 社交媒體連結 (可選擇性添加)
-// const socialLinks: Array<{
-//   icon: React.ComponentType<{ className?: string }>;
-//   label: string;
-//   link: string;
-// }> = [
-// ];
+type FormField = "name" | "email" | "message";
 
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<Record<FormField, string>>({
     name: "",
     email: "",
     message: "",
   });
+
+  const formFields: Array<{
+    name: FormField;
+    label: string;
+    placeholder: string;
+    required?: boolean;
+    tag: "input" | "textarea";
+    className?: string;
+  }> = [
+    {
+      name: "name",
+      label: "Name",
+      placeholder: "Enter your name",
+      required: true,
+      tag: "input",
+      className: "text-lg",
+    },
+    {
+      name: "email",
+      label: "Email",
+      placeholder: "Enter your email",
+      required: true,
+      tag: "input",
+      className: "text-lg",
+    },
+    {
+      name: "message",
+      label: "Message",
+      placeholder: "Type your message here...",
+      required: true,
+      tag: "textarea",
+      className: "text-lg",
+    },
+  ];
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -170,65 +197,31 @@ export const ContactSection = () => {
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* 姓名輸入 */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-[var(--text-color)] mb-2"
-                  >
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[var(--background-color-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-color)] placeholder-[var(--text-color-muted)] focus:border-[var(--border-color-focus)] focus:outline-none focus:ring-2 focus:ring-[var(--text-color-primary)]/20 transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                {/* 電子郵件輸入 */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-[var(--text-color)] mb-2"
-                  >
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[var(--background-color-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-color)] placeholder-[var(--text-color-muted)] focus:border-[var(--border-color-focus)] focus:outline-none focus:ring-2 focus:ring-[var(--text-color-primary)]/20 transition-all"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                {/* 訊息輸入 */}
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-[var(--text-color)] mb-2"
-                  >
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={5}
-                    className="w-full px-4 py-3 bg-[var(--background-color-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-color)] placeholder-[var(--text-color-muted)] focus:border-[var(--border-color-focus)] focus:outline-none focus:ring-2 focus:ring-[var(--text-color-primary)]/20 transition-all resize-vertical"
-                    placeholder="Tell us about your project..."
-                  />
-                </div>
+                {formFields.map((field) => (
+                  <div key={field.name}>
+                    <label
+                      htmlFor={field.name}
+                      className="block text-sm font-medium text-[var(--text-color)] mb-2"
+                    >
+                      {field.label}{" "}
+                      {field.required && (
+                        <span className="text-red-500">*</span>
+                      )}
+                    </label>
+                    <field.tag
+                      id={field.name}
+                      name={field.name}
+                      required={field.required}
+                      value={formData[field.name]}
+                      onChange={handleInputChange}
+                      className={cn(
+                        "w-full px-4 py-3 bg-[var(--background-color-secondary)] border border-[var(--border-color)] rounded-lg placeholder-[var(--text-color-muted)] focus:border-[var(--border-color-focus)] focus:outline-none focus:ring-2 focus:ring-[var(--text-color-primary)]/20 transition-all",
+                        field.className
+                      )}
+                      placeholder={field.placeholder}
+                    />
+                  </div>
+                ))}
 
                 {/* 提交按鈕 */}
                 <button
