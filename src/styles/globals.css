@@ -17,7 +17,7 @@
     --text-color-muted: #b0b0b0;
 
     --border-color: #2a2a2acc;
-    --border-color-light: #404040;
+    --border-color-light: #4a5565;
     --border-color-focus: var(--text-color-primary);
 
     /* === 效果參數 === */
@@ -66,22 +66,47 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* === Hero 區塊樣式 === */
-  /* #hero {
-    position: relative;
-    background: url("/cbg.jpg") center/cover no-repeat;
-    background-attachment: fixed; 
-  } */
-  /* 
-  #hero::before {
+  body::before,
+  body::after {
     content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--background-color);
-    opacity: 0.7;
+    position: fixed;
     z-index: 0;
-    pointer-events: none; 
-  } */
+    pointer-events: none;
+    border-radius: 100%;
+    filter: blur(80px);
+    animation: pulse 6s ease-in-out infinite;
+  }
+
+  /* 淡藍漸層背景區塊 */
+  body::before {
+    top: 25%;
+    left: 25%;
+    width: 24rem; /* 96 */
+    height: 24rem;
+    background: rgba(34, 211, 238, 0.1); 
+  }
+
+  /* 淺藍背景區塊 */
+  body::after {
+    bottom: 25%;
+    right: 25%;
+    width: 20rem; /* 80 */
+    height: 20rem;
+    background: rgba(96, 165, 250, 0.1);
+    animation-delay: 1s;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
 
   /* === 按鈕系統 === */
   button,
@@ -129,7 +154,7 @@
 
   .btn {
     background: var(--background-color-secondary);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color-light);
   }
 
   .btn-primary {

@@ -15,7 +15,7 @@ export const routes: {
     href: "/contact",
   },
   {
-    label: "Projects",
-    href: "/projects",
+    label: "Portfolio",
+    href: "/portfolio",
   },
 ];
