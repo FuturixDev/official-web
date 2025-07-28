@@ -10,17 +10,17 @@ const description =
 
 export const HeroSection = () => {
   return (
-    <section id="hero" className="relative">
-      <div className="container relative z-10">
+    <section id="hero">
+      <div className="container z-10">
         <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20">
           {/* 主標語區域 */}
-          <div className="space-y-6 max-w-4xl mx-auto">
+          <div className="space-y-4 max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
               {slogan}
             </h1>
 
             {/* 副描述 */}
-            <h2 className="text-lg sm:text-xl md:text-2xl text-[var(--text-color-muted)] font-light mt-8">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-[var(--text-color-muted)] font-light">
               {description}
             </h2>
           </div>
@@ -44,7 +44,7 @@ export const HeroSection = () => {
               <Link
                 key={index}
                 className={cn(
-                  `rounded-full flex items-center justify-center gap-1 px-8 py-4`,
+                  `whitespace-nowrap rounded-full flex items-center justify-center gap-1 px-8 py-4`,
                   item.className
                 )}
                 href={item.href}

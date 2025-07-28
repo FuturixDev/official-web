@@ -68,7 +68,7 @@
 
   body::before,
   body::after {
-    --a: 0.1; /* 背景透明度 */
+    --a: 0.15; /* 背景透明度 */
     content: "";
     position: fixed;
     z-index: 0;
@@ -78,7 +78,7 @@
     animation: pulse 6s ease-in-out infinite;
   }
 
-  /* 淡藍漸層背景區塊 */
+  /* 淡藍背景區塊 */
   body::before {
     top: 25%;
     left: 25%;
@@ -100,11 +100,11 @@
   @keyframes pulse {
     0%,
     100% {
-      opacity: 0.7;
+      opacity: 0.105;
       transform: scale(1);
     }
     50% {
-      opacity: 1;
+      opacity: 0.15;
       transform: scale(1.05);
     }
   }
@@ -172,7 +172,7 @@
   .btn-secondary {
     background: linear-gradient(
       45deg,
-      var(--text-color-primary),
+      var(--text-color-secondary),
       var(--text-color-tertiary)
     );
     box-shadow: var(--shadow-base);
