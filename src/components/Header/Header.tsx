@@ -12,7 +12,7 @@ export const Header = () => {
     <header className="fixed top-0 z-1080 w-full bg-[var(--background-color)]/90 backdrop-blur-md">
       <nav className="flex flex-col" role="navigation" aria-label="主導航">
         <div className="container flex items-center justify-between flex-nowrap w-full">
-          <Link href="/" className="h-full">
+          <Link href="/">
             {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img
               alt="Logo"
@@ -47,7 +47,7 @@ export const Header = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="p-3"
+                className="p-4"
                 onClick={() => setMenuShow(false)}
               >
                 {item.label}

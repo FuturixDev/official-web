@@ -14,8 +14,8 @@ export const HeroSection = () => {
       <div className="container relative z-10">
         <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20">
           {/* 主標語區域 */}
-          <div className="space-y-6 max-w-6xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
+          <div className="space-y-6 max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
               {slogan}
             </h1>
 
