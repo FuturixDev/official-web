@@ -39,6 +39,7 @@
   opacity: 0;
   transition: all var(--transition-normal) ease;
   color: var(--text-color);
+  will-change: opacity;
 }
 .portfolio-card:hover .overlay {
   opacity: 1;
