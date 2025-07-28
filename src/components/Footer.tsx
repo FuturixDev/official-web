@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="flex flex-col">
           <div className="text-base md:text-lg flex flex-col gap-2 text-[var(--text-color-muted)]">
             <div className="flex gap-2">
-              <CopyrightOutlined /> {year}, Futurix All rights reserved.
+              <CopyrightOutlined /> {year}, All rights reserved.
             </div>
            
           </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/utils/className";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 const slogan = "Designing the Future, One Pixel at a Time";
@@ -24,16 +26,33 @@ export const HeroSection = () => {
           </div>
 
           {/* 按鈕區域 */}
-          <div className="flex gap-4 sm:gap-6 mt-12 text-lg font-semibold ">
-            <Link
-              className="btn-primary rounded-full px-8 py-4 text-lg"
-              href="/portfolio"
-            >
-              Our Portfolio
-            </Link>
-            <Link className="btn rounded-full px-8 py-4" href="/contact">
-              Contact Us
-            </Link>
+          <div className="w-full sm:w-fit flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 text-lg font-semibold ">
+            {[
+              {
+                className: "btn-primary",
+                href: "/portfolio",
+                label: "Our Portfolio",
+                icon: ArrowRightOutlined,
+              },
+              {
+                className: "btn",
+                href: "/contact",
+                label: "Contact Us",
+                icon: ArrowRightOutlined,
+              },
+            ].map((item, index) => (
+              <Link
+                key={index}
+                className={cn(
+                  `rounded-full flex items-center justify-center gap-1 px-8 py-4`,
+                  item.className
+                )}
+                href={item.href}
+              >
+                <item.icon />
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
