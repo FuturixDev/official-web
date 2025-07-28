@@ -49,7 +49,7 @@ export const AboutUsSection = () => {
                 )}
                 href={"/about"}
               >
-                About Us
+                More
               </Link>
             </div>
           </div>
