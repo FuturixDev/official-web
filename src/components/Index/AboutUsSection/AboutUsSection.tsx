@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { cn } from "@/utils/className";
+
 const slogan = "Innovate, design, and build future-ready digital solutions";
 const description = [
   "Based in Taiwan, FuturiX Dev is a student-led team passionate about building smart, scalable, and beautiful digital experiences.",
@@ -37,6 +40,18 @@ export const AboutUsSection = () => {
                 </p>
               ))}
             </article>
+            
+            <div className="mt-8">
+              <Link
+                className={cn(
+                  `whitespace-nowrap rounded-full flex items-center justify-center gap-1 px-8 py-4`,
+                  "btn"
+                )}
+                href={"/about"}
+              >
+                About Us
+              </Link>
+            </div>
           </div>
         </div>
       </div>
