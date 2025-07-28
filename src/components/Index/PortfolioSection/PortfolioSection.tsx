@@ -45,7 +45,7 @@ export const PortfolioSection = () => {
             Portfolio
           </h1>
           <p className="text-center text-[var(--text-color-muted)] mb-8">
-            Come explore what we’ve been up to — where creativity meets
+            Come explore what we&apos;ve been up to — where creativity meets
             technology to bring ideas to life.
           </p>
         </div>

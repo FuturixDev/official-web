@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { cn } from "@/utils/className";
+import { fadeInItem, staggerContainer } from "@/libs/motion";
 
 const slogan = "Innovate, design, and build future-ready digital solutions";
 const description = [
@@ -14,34 +16,59 @@ export const AboutUsSection = () => {
   return (
     <section id="aboutUs">
       <div className="container mb-12">
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          initial="hiddenBottom"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeInItem}
+          transition={{ delay: 0.2 }}
+        >
           <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
             About Us
           </h1>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16"
+          variants={staggerContainer}
+          initial="hiddenBottom"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* 左側 - 標語 */}
-          <div>
+          <motion.div variants={fadeInItem}>
             <h2 className="text-[var(--text-color-muted)] text-5xl lg:text-6xl font-semibold text-left leading-tight">
               {slogan}
             </h2>
-          </div>
+          </motion.div>
 
           {/* 右側 - 描述 */}
-          <div>
+          <motion.div variants={fadeInItem}>
             <article>
               {description.map((line, index) => (
-                <p
+                <motion.p
                   key={index}
                   className="text-base md:text-lg lg:text-xl leading-relaxed text-justify"
+                  initial="hiddenBottom"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  variants={fadeInItem}
+                  transition={{ delay: 0.1 * index }}
                 >
                   {line}
-                </p>
+                </motion.p>
               ))}
             </article>
-            
-            <div className="mt-8">
+
+            <motion.div
+              className="mt-8"
+              initial="hiddenBottom"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={fadeInItem}
+              transition={{ delay: 0.5 }}
+            >
               <Link
                 className={cn(
                   `whitespace-nowrap rounded-full flex items-center justify-center gap-1 px-8 py-4`,
@@ -51,9 +78,9 @@ export const AboutUsSection = () => {
               >
                 More
               </Link>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
