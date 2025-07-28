@@ -68,7 +68,7 @@
 
   body::before,
   body::after {
-    --a: 0.15; /* 背景透明度 */
+    --a: 0.1; /* 背景透明度 */
     content: "";
     position: fixed;
     z-index: 0;
@@ -189,7 +189,6 @@
   .btn-secondary:hover,
   .btn-tertiary:hover {
     text-decoration: none !important;
-    filter: brightness(var(--brightness-light));
     transform: translateY(-2px);
   }
 

@@ -28,7 +28,7 @@ const Track = React.forwardRef<
 >(
   (
     {
-      duration = 15000,
+      duration = 20000,
       groupCount = 2,
       direction = "left",
       className,
@@ -114,7 +114,7 @@ export const Carousel = Object.assign(
   ({
     children,
     groupCount = 2,
-    duration = 15000,
+    duration,
     direction = "left",
     ...rest
   }: CarouselProps) => {

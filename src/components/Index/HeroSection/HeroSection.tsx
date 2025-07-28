@@ -12,7 +12,7 @@ export const HeroSection = () => {
   return (
     <section id="hero">
       <div className="container z-10">
-        <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20">
+        <div className="min-h-160 flex flex-col items-center justify-center text-center px-4 py-20">
           {/* 主標語區域 */}
           <div className="space-y-4 max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">

@@ -1,35 +1,87 @@
 "use client";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { LanguageContent, LanguageOption } from "@/types/language";
-import { ProjectsDiv } from "./ProjectsDiv";
-import { useInViewUnderlineSpread } from "@/hooks/useInViewUnderlineSpread";
 
-type PortfolioContent = Record<"portfolio", string>;
+import { Carousel } from "@/components/custom/Carousel";
+import { DemoOutlined } from "@/components/custom/DemoOutlined";
+import "@/styles/portfolio.css";
+import { OutsideLink } from "fanyucomponents";
 
-const getPortfolioContent = (language: LanguageOption): PortfolioContent =>
-  ((
-    {
-      chinese: {
-        portfolio: "作品集",
-      },
-      english: {
-        portfolio: "Portfolio",
-      },
-    } as LanguageContent<PortfolioContent>
-  )[language]);
+const portfolio = [
+  {
+    url: "https://inventory-e39j.onrender.com/dashboard.php",
+    img: "/portfolio/inventory.jpg",
+  },
+  {
+    url: "https://class.zeabur.app/",
+    img: "/portfolio/class.jpg",
+  },
+  {
+    url: "https://cashflow-system-ochre.vercel.app/",
+    img: "/portfolio/cashflow.jpg",
+  },
+  {
+    url: "https://web3-jade-eta.vercel.app/",
+    img: "/portfolio/web3.jpg",
+  },
+  {
+    url: "https://58hpi8c7e55k.manus.space/",
+    img: "/portfolio/58hpi8c7e55k.jpg",
+  },
+  {
+    url: "https://txhkngcm.manus.space/",
+    img: "/portfolio/txhkngcm.jpg",
+  },
+  {
+    url: " https://vdpfaorm.manus.space/?code=oLjRQA4thbhcHwnchwJ2p9",
+    img: "/portfolio/vdpfaorm.jpg",
+  },
+];
 
 export const PortfolioSection = () => {
-  const Language = useLanguage();
-  const portfolioContent = getPortfolioContent(Language.Current);
-  const ref = useInViewUnderlineSpread<HTMLHeadingElement>();
-
   return (
     <section id="portfolio">
-      <div className="container flex flex-col items-center">
-        <h1 ref={ref} className="text-5xl font-bold">
-          {portfolioContent.portfolio}
-        </h1>
-        <ProjectsDiv />
+      <div className="container">
+        <div className="text-center mb-12">
+          <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent">
+            Portfolio
+          </h1>
+          <p className="text-center text-[var(--text-color-muted)] mb-8">
+            Come explore what we’ve been up to — where creativity meets
+            technology to bring ideas to life.
+          </p>
+        </div>
+
+        <div className="flex justify-center">
+          <div className="w-full">
+            {/* 輪播區塊 */}
+            <Carousel>
+              {portfolio.map((item, index) => (
+                <article
+                  key={`${item.url}-${index}`}
+                  className="portfolio-card m-2 w-72 md:w-80"
+                >
+                  <figure className="w-full h-full">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.img}
+                      alt={`Portfolio-${index + 1} Preview`}
+                    />
+                    <figcaption>
+                      <OutsideLink
+                        href={item.url}
+                        className="overlay flex flex-col items-center justify-center"
+                        aria-label={`View details of project ${index + 1}`}
+                      >
+                        <span className="text-xl flex items-center justify-center gap-1">
+                          View Details <DemoOutlined />
+                        </span>
+                      </OutsideLink>
+                    </figcaption>
+                  </figure>
+                </article>
+              ))}
+            </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
