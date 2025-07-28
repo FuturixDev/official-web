@@ -1,7 +1,9 @@
 "use client";
 
+import { fadeInItem } from "@/libs/motion";
 import { cn } from "@/utils/className";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const slogan = "Designing the Future, One Pixel at a Time";
@@ -12,9 +14,15 @@ export const HeroSection = () => {
   return (
     <section id="hero">
       <div className="container z-10">
-        <div className="min-h-160 flex flex-col items-center justify-center text-center px-4 py-20">
+        <div className="min-h-160 flex flex-col items-center justify-center text-center">
           {/* 主標語區域 */}
-          <div className="space-y-4 max-w-4xl mx-auto">
+          <motion.div
+            variants={fadeInItem}
+            initial="hiddenBottom"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="space-y-4 max-w-4xl mx-auto"
+          >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
               {slogan}
             </h1>
@@ -23,10 +31,16 @@ export const HeroSection = () => {
             <h2 className="text-lg sm:text-xl md:text-2xl text-[var(--text-color-muted)] font-light">
               {description}
             </h2>
-          </div>
+          </motion.div>
 
           {/* 按鈕區域 */}
-          <div className="w-full sm:w-fit flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 text-lg font-semibold ">
+          <motion.div
+            variants={fadeInItem}
+            initial="hiddenBottom"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="w-full sm:w-fit flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 text-lg font-semibold "
+          >
             {[
               {
                 className: "btn-primary",
@@ -53,7 +67,7 @@ export const HeroSection = () => {
                 {item.label}
               </Link>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

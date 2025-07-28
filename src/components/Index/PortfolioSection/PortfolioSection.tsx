@@ -41,7 +41,7 @@ export const PortfolioSection = () => {
     <section id="portfolio">
       <div className="container">
         <div className="text-center mb-12">
-          <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent">
+          <h1 className="mb-4 text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent">
             Portfolio
           </h1>
           <p className="text-center text-[var(--text-color-muted)] mb-8">
