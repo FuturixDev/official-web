@@ -93,7 +93,7 @@
     right: 25%;
     width: 20rem; /* 80 */
     height: 20rem;
-    background: rgba(96, 165, 250, var(--a));
+    background: rgba(96, 180, 250, var(--a));
     animation-delay: 1s;
   }
 
@@ -275,10 +275,6 @@
     color: inherit;
     text-decoration: none;
     transition: all var(--transition-normal) ease;
-  }
-
-  a:hover {
-    text-decoration: underline 1px;
   }
 
   /* === 滑動摺疊效果 === */
