@@ -4,6 +4,7 @@ import { Carousel } from "@/components/custom/Carousel";
 import { DemoOutlined } from "@/components/custom/DemoOutlined";
 import "@/styles/portfolio.css";
 import { OutsideLink } from "fanyucomponents";
+import { Title } from "../custom/Title";
 
 const portfolio = [
   {
@@ -41,9 +42,7 @@ export const PortfolioSection = () => {
     <section id="portfolio">
       <div className="container">
         <div className="text-center mb-12">
-          <h1 className="mb-4 text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent">
-            Portfolio
-          </h1>
+          <Title>Portfolio</Title>
           <p className="text-center text-[var(--text-color-muted)] mb-8">
             Come explore what we&apos;ve been up to — where creativity meets
             technology to bring ideas to life.

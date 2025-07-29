@@ -6,6 +6,7 @@ import { MailOutlined, SendOutlined } from "@ant-design/icons";
 import { OutsideLink } from "fanyucomponents";
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
+import { Title } from "../custom/Title";
 
 const email = "futurixdev6@gmail.com";
 
@@ -100,9 +101,7 @@ export const ContactSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
-            Contact Us
-          </h1>
+          <Title>Contact Us</Title>
           <p className="text-lg md:text-xl text-[var(--text-color-muted)] mt-4 max-w-2xl mx-auto">
             Ready to bring your ideas to life? Let&apos;s discuss your next
             project.

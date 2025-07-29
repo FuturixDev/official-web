@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/className";
 import { fadeInItem, staggerContainer } from "@/libs/motion";
+import { Title } from "../custom/Title";
 
 const slogan = "Innovate, design, and build future-ready digital solutions";
 const description = [
@@ -24,9 +25,7 @@ export const AboutUsSection = () => {
           variants={fadeInItem}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
-            About Us
-          </h1>
+          <Title>About Us</Title>
         </motion.div>
 
         <motion.div
