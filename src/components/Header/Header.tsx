@@ -12,7 +12,7 @@ export const Header = () => {
     <header className="fixed top-0 z-1080 w-full bg-[var(--background-color)]/75 backdrop-blur-md">
       <nav className="flex flex-col" role="navigation" aria-label="主導航">
         <div className="container flex items-center justify-between flex-nowrap w-full">
-          <Link className="h-16 w-auto p-2" href="/">
+          <Link className="h-8 w-auto" href="/">
             {/*eslint-disable-next-line @next/next/no-img-element*/}
             <img
               alt="Logo"

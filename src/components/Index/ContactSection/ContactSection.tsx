@@ -22,46 +22,46 @@ const contactInfo = [
 
 type FormField = "name" | "email" | "message";
 
+const formFields: Array<{
+  name: FormField;
+  label: string;
+  placeholder: string;
+  required?: boolean;
+  tag: "input" | "textarea";
+  className?: string;
+}> = [
+  {
+    name: "name",
+    label: "Name",
+    placeholder: "Enter your name",
+    required: true,
+    tag: "input",
+    className: "text-lg",
+  },
+  {
+    name: "email",
+    label: "Email",
+    placeholder: "Enter your email",
+    required: true,
+    tag: "input",
+    className: "text-lg",
+  },
+  {
+    name: "message",
+    label: "Message",
+    placeholder: "Type your message here...",
+    required: true,
+    tag: "textarea",
+    className: "text-lg",
+  },
+];
+
 export const ContactSection = () => {
   const [formData, setFormData] = useState<Record<FormField, string>>({
     name: "",
     email: "",
     message: "",
   });
-
-  const formFields: Array<{
-    name: FormField;
-    label: string;
-    placeholder: string;
-    required?: boolean;
-    tag: "input" | "textarea";
-    className?: string;
-  }> = [
-    {
-      name: "name",
-      label: "Name",
-      placeholder: "Enter your name",
-      required: true,
-      tag: "input",
-      className: "text-lg",
-    },
-    {
-      name: "email",
-      label: "Email",
-      placeholder: "Enter your email",
-      required: true,
-      tag: "input",
-      className: "text-lg",
-    },
-    {
-      name: "message",
-      label: "Message",
-      placeholder: "Type your message here...",
-      required: true,
-      tag: "textarea",
-      className: "text-lg",
-    },
-  ];
 
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -162,31 +162,6 @@ export const ContactSection = () => {
                 );
               })}
             </div>
-
-            {/* 社交媒體連結 (如果有的話) */}
-            {/* {socialLinks.length > 0 && (
-              <div>
-                <h3 className="text-xl font-semibold text-[var(--text-color)] mb-4">
-                  Follow Us
-                </h3>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => {
-                    const IconComponent = social.icon;
-                    return (
-                      <Link
-                        key={index}
-                        href={social.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-lg bg-[var(--background-color-primary)] border border-[var(--border-color)] hover:border-[var(--border-color-focus)] flex items-center justify-center text-[var(--text-color-muted)] hover:text-[var(--text-color-primary)] transition-all duration-300"
-                      >
-                        <IconComponent className="text-xl" />
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            )} */}
           </motion.div>
 
           {/* 右側 - 聯繫表單 */}
@@ -205,7 +180,7 @@ export const ContactSection = () => {
                     >
                       {field.label}
                       {field.required && (
-                        <span className="text-red-500">*</span>
+                        <span className="text-red-500"> *</span>
                       )}
                     </label>
                     <field.tag
