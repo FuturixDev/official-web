@@ -2,26 +2,46 @@
 
 import { motion } from "framer-motion";
 import { Title } from "../custom/Title";
-import { FireOutlined } from "@ant-design/icons";
+import { FireOutlined, GlobalOutlined, ShoppingCartOutlined, CodeOutlined } from "@ant-design/icons";
+import { fadeInItem, staggerContainer } from "@/libs/motion";
+import { cn } from "@/utils/className";
 
 const services = [
   {
     label: "Website Design",
-    description:
-      "Responsive, beautiful, and optimized for every device. Wix, WordPress, Webflow — we master them all.",
+    description: [
+      "Responsive, beautiful, and optimized for every device",
+      "Master Wix, WordPress, Webflow platforms",
+      "Modern UI/UX design principles",
+      "Cross-browser compatibility"
+    ],
     featured: false,
+    icon: <GlobalOutlined className="text-2xl text-[var(--text-color-primary)]" />,
+    gradient: "from-blue-500/10 to-cyan-500/10",
   },
   {
     label: "Full-Stack Development",
-    description:
-      "Custom frontend + backend systems using React, Node.js, Laravel, MySQL — tailored to your needs. We also handle domain setup, Docker hosting, and get your site live — fast, secure, and SEO-ready.",
+    description: [
+      "Custom frontend + backend systems using React, Node.js, Laravel, MySQL",
+      "Domain setup and configuration",
+      "Docker hosting and deployment",
+      "Fast, secure, and SEO-ready solutions"
+    ],
     featured: true,
+    icon: <CodeOutlined className="text-2xl text-[var(--text-color-secondary)]" />,
+    gradient: "from-orange-500/10 to-red-500/10",
   },
   {
     label: "E-commerce Solutions",
-    description:
-      "Build scalable online stores with Shopify, WooCommerce, Stripe, ECPay, and more.",
+    description: [
+      "Build scalable online stores",
+      "Shopify and WooCommerce integration",
+      "Payment gateways: Stripe, ECPay",
+      "Inventory and order management"
+    ],
     featured: false,
+    icon: <ShoppingCartOutlined className="text-2xl text-[var(--text-color-tertiary)]" />,
+    gradient: "from-green-500/10 to-emerald-500/10",
   },
 ];
 
@@ -29,46 +49,107 @@ export const ServicesSection = () => {
   return (
     <section id="services">
       <div className="container">
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-16"
+          initial="hiddenBottom"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeInItem}
+          transition={{ delay: 0.2 }}
+        >
           <Title>Our Services</Title>
-          <p className="text-center text-[var(--text-color-muted)] mb-8">
+          <p className={cn(
+            "text-center text-lg leading-relaxed max-w-2xl mx-auto",
+            "text-[var(--text-color-muted)]"
+          )}>
             From templates to custom systems — we do it all with cutting-edge
             technology.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="px-12 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={staggerContainer}
+          initial="hiddenBottom"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {services.map((service, index) => (
-            <div key={index} className="relative">
-              <div className="card p-6 h-full">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-semibold">{service.label}</h3>
+            <motion.div
+              key={index}
+              className="relative group"
+              variants={fadeInItem}
+            >
+              <div className={cn(
+                "card p-8 h-full relative overflow-hidden transition-all duration-300",
+                "bg-gradient-to-br border-[var(--border-color)] hover:border-[var(--border-color-light)]",
+                service.gradient
+              )}>
+                {/* 背景漸變效果 */}
+                <div className={cn(
+                  "absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5",
+                  "opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                )} />
+                
+                <div className="relative z-10">
+                  {/* 圖標和標題區域 */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className={cn(
+                      "p-3 rounded-xl border transition-transform duration-300",
+                      "bg-[var(--background-color-secondary)] border-[var(--border-color)]",
+                      "group-hover:scale-110"
+                    )}>
+                      {service.icon}
+                    </div>
+                    <h3 className={cn(
+                      "text-xl font-semibold transition-colors duration-300",
+                      "text-[var(--text-color)] group-hover:text-[var(--text-color-primary)]"
+                    )}>
+                      {service.label}
+                    </h3>
+                  </div>
+                  
+                  {/* 描述文字 */}
+                  <ul className={cn(
+                    "leading-relaxed transition-colors duration-300 space-y-2",
+                    "text-[var(--text-color-muted)] group-hover:text-[var(--text-color)]"
+                  )}>
+                    {service.description.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-[var(--text-color-primary)] mt-1.5 text-xs">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-[var(--text-color-muted)] leading-relaxed">
-                  {service.description}
-                </p>
               </div>
+              
+              {/* HOT 標籤 */}
               {service.featured && (
                 <motion.div
-                  className="absolute -top-3 -right-3 z-20"
+                  className="absolute -top-4 -right-4 z-20"
                   animate={{
-                    scale: [1, 1.1, 1],
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 2, -2, 0],
                   }}
                   transition={{
-                    duration: 2,
+                    duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
                 >
-                  <div className="flex items-center gap-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                    <FireOutlined />
-                    HOT
+                  <div className={cn(
+                    "flex items-center gap-2 text-white text-sm font-bold px-4 py-2 rounded-full shadow-xl",
+                    "bg-gradient-to-r from-orange-500 to-red-500 border-2 border-white/20 backdrop-blur-sm"
+                  )}>
+                    <FireOutlined className="text-yellow-200" />
+                    <span className="tracking-wide">HOT</span>
                   </div>
                 </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
