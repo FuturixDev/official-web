@@ -82,7 +82,7 @@ export const ServicesSection = () => {
             >
               <div className={cn(
                 "card p-8 h-full relative overflow-hidden transition-all duration-300",
-                "bg-gradient-to-br border-[var(--border-color)] hover:border-[var(--border-color-light)]",
+                "bg-gradient-to-br",
                 service.gradient
               )}>
                 {/* 背景漸變效果 */}
@@ -116,7 +116,7 @@ export const ServicesSection = () => {
                   )}>
                     {service.description.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[var(--text-color-primary)] mt-1.5 text-xs">•</span>
+                        <span className="mt-[0.5em] text-xs">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
