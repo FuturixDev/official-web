@@ -37,15 +37,16 @@ export const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="px-24 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="px-12 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="relative group">
-              <div className={`card p-6`}>
-                <h3 className="text-xl font-semibold mb-2">{service.label}</h3>
-                <p className="text-[var(--text-color-muted)]">
+            <div key={index} className="relative">
+              <div className="card p-6 h-full">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-semibold">{service.label}</h3>
+                </div>
+                <p className="text-[var(--text-color-muted)] leading-relaxed">
                   {service.description}
                 </p>
-                {/* 特色標籤 */}
               </div>
               {service.featured && (
                 <motion.div
