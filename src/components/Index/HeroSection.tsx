@@ -49,7 +49,7 @@ export const HeroSection = () => {
                 icon: ArrowRightOutlined,
               },
               {
-                className: "btn",
+                className: "btn-secondary",
                 href: "/contact",
                 label: "Contact Us",
                 icon: ArrowRightOutlined,

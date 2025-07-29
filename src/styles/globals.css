@@ -151,11 +151,9 @@
   }
 
   .btn-secondary {
-    background: linear-gradient(
-      45deg,
-      var(--text-color-secondary),
-      var(--text-color-tertiary)
-    );
+    background: var(--background-color-primary);
+    border: 1px solid var(--text-color-secondary);
+    color: var(--text-color-secondary);
     box-shadow: var(--shadow-base);
   }
 
@@ -171,6 +169,13 @@
   .btn-tertiary:hover {
     text-decoration: none !important;
     transform: translateY(-2px);
+  }
+
+  /* Secondary 按鈕的特殊 hover 效果 */
+  .btn-secondary:hover {
+    background: var(--text-color-secondary);
+    color: white;
+    border-color: var(--text-color-secondary);
   }
 
   button:active,

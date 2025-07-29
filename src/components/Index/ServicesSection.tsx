@@ -178,7 +178,7 @@ export const ServicesSection = () => {
 
         {/* 諮詢 */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-8"
           initial="hiddenBottom"
           whileInView="show"
           viewport={{ once: true }}
@@ -188,7 +188,6 @@ export const ServicesSection = () => {
           <div
             className={cn(
               "card p-8 relative overflow-hidden",
-              "bg-gradient-to-br from-blue-500/5 to-purple-500/5",
               "border-2 border-dashed border-[var(--border-color)]"
             )}
           >
@@ -212,9 +211,8 @@ export const ServicesSection = () => {
               </p>
               <motion.button
                 className={cn(
-                  "px-8 py-3 rounded-xl font-semibold transition-all duration-300",
-                  "bg-gradient-to-r from-blue-500 to-purple-500 text-white",
-                  "hover:shadow-lg hover:scale-105 active:scale-95"
+                  "btn-secondary",
+                  "px-8 py-3 rounded-xl font-semibold"
                 )}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
@@ -222,14 +220,6 @@ export const ServicesSection = () => {
                 Get Free Consultation
               </motion.button>
             </div>
-
-            {/* 背景裝飾 */}
-            <div
-              className={cn(
-                "absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10",
-                "opacity-0 hover:opacity-100 transition-opacity duration-500"
-              )}
-            />
           </div>
         </motion.div>
       </div>
