@@ -203,7 +203,7 @@ export const ContactSection = () => {
                       htmlFor={field.name}
                       className="block text-sm font-medium text-[var(--text-color)] mb-2"
                     >
-                      {field.label}{" "}
+                      {field.label}
                       {field.required && (
                         <span className="text-red-500">*</span>
                       )}

@@ -64,50 +64,31 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
   }
 
-  body::before,
-  body::after {
-    --a: 0.15; /* 背景透明度 */
+  /* === 科技感網格背景 === */
+  body::before {
     content: "";
     position: fixed;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: 100%;
-    filter: blur(80px);
-    animation: pulse 6s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: top left;
+    background-repeat: repeat;
+    pointer-events: none; /* 防止背景影響點擊事件 */
+    opacity: 0.5; /* 調整背景透明度 */
   }
 
-  /* 淡藍背景區塊 */
-  body::before {
-    top: 25%;
-    left: 25%;
-    width: 24rem; /* 96 */
-    height: 24rem;
-    background: rgba(34, 211, 238, var(--a));
-  }
-
-  /* 淺藍背景區塊 */
-  body::after {
-    bottom: 25%;
-    right: 25%;
-    width: 20rem; /* 80 */
-    height: 20rem;
-    background: rgba(96, 180, 250, var(--a));
-    animation-delay: 1s;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 0.105;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.15;
-      transform: scale(1.05);
-    }
-  }
 
   /* === 按鈕系統 === */
   button,
