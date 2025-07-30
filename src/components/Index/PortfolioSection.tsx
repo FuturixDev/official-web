@@ -2,9 +2,8 @@
 
 import { Carousel } from "@/components/custom/Carousel";
 import { DemoOutlined } from "@/components/custom/DemoOutlined";
-import "@/styles/portfolio.css";
 import { OutsideLink } from "fanyucomponents";
-import { Title } from "../custom/Title";
+import { Title } from "./Title";
 
 const portfolio = [
   {

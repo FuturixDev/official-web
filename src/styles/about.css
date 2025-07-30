@@ -1,0 +1,22 @@
+details summary {
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  transition: color 0.2s;
+}
+
+details summary:hover {
+  color: var(--text-color-primary);
+}
+
+details summary::after {
+  content: "+";
+  position: absolute;
+  right: 1em;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  content: "-";
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Title } from "../custom/Title";
+import { Title } from "./Title";
 import {
   FireOutlined,
   GlobalOutlined,
