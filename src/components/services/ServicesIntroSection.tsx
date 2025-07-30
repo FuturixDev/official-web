@@ -8,7 +8,7 @@ const icons = [
   "devicon-angularjs-plain", // Angular
 ];
 
-export const ServiceIntroSection = () => (
+export const ServicesIntroSection = () => (
   <section className="bg-black text-white py-20">
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       {/* Left: Title, icons, tagline */}

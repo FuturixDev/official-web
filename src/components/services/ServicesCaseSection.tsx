@@ -23,7 +23,7 @@ const cases = [
   },
 ];
 
-export const ServiceCaseSection = () => (
+export const ServicesCaseSection = () => (
   <section className="bg-black text-white py-20">
     <div className="container mx-auto flex flex-col gap-24">
       {cases.map((item) => (

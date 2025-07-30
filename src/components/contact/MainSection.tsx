@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { fadeInItem, staggerContainer } from "@/libs/motion";
-import { MailFilled, WhatsAppOutlined } from "@ant-design/icons";
+import { MailOutlined, WhatsAppOutlined } from "@ant-design/icons";
 import { email, phoneNumber } from "@/libs";
 import { OutsideLink } from "fanyucomponents";
 import { Title } from "@/components/custom/Title";
@@ -26,19 +26,18 @@ export const MainSection = () => (
           className="max-w-5xl mx-auto"
           variants={staggerContainer}
           initial="hiddenBottom"
-          whileInView="show"
+          animate="show"
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Email 聯絡卡片 */}
             <motion.div
               className="card p-10 group hover:shadow-lg transition-all duration-300"
-              whileHover={{ y: -4 }}
               variants={fadeInItem}
             >
               <div className="text-center space-y-6">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] rounded-full flex items-center justify-center">
-                  <MailFilled className="text-2xl" />
+                  <MailOutlined className="text-2xl" />
                 </div>
 
                 <div>
@@ -61,7 +60,6 @@ export const MainSection = () => (
             {/* WhatsApp 聯絡卡片 */}
             <motion.div
               className="card p-10 group hover:shadow-lg transition-all duration-300"
-              whileHover={{ y: -4 }}
               variants={fadeInItem}
             >
               <div className="text-center space-y-6">
@@ -79,7 +77,6 @@ export const MainSection = () => (
                       .replace("+", "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block"
                   >
                     <span className="text-2xl md:text-3xl text-[var(--text-color)] hover:text-[var(--text-color-primary)] transition-colors duration-300 font-light">
                       {phoneNumber}
