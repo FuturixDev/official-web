@@ -6,9 +6,8 @@ import { MailOutlined, SendOutlined } from "@ant-design/icons";
 import { OutsideLink } from "fanyucomponents";
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
-import { Title } from "../custom/Title";
-
-const email = "futurixdev6@gmail.com";
+import { Title } from "./Title";
+import { email } from "@/libs";
 
 // 聯繫方式數據
 const contactInfo = [

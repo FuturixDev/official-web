@@ -19,8 +19,7 @@ export const HeroSection = () => {
           <motion.div
             variants={fadeInItem}
             initial="hiddenBottom"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="show"
             className="space-y-4 max-w-4xl mx-auto"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
@@ -37,8 +36,7 @@ export const HeroSection = () => {
           <motion.div
             variants={fadeInItem}
             initial="hiddenBottom"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="show"
             className="w-full sm:w-fit flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 text-lg font-semibold "
           >
             {[
@@ -49,7 +47,7 @@ export const HeroSection = () => {
                 icon: ArrowRightOutlined,
               },
               {
-                className: "btn",
+                className: "btn-secondary",
                 href: "/contact",
                 label: "Contact Us",
                 icon: ArrowRightOutlined,

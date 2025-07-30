@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/className";
 import { fadeInItem, staggerContainer } from "@/libs/motion";
-import { Title } from "../custom/Title";
+import { Title } from "./Title";
 
 const slogan = "Innovate, design, and build future-ready digital solutions";
 const description = [

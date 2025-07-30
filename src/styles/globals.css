@@ -12,7 +12,7 @@
     --text-color: #f5f5f5;
     --text-color-primary: #00ffff;
     --text-color-secondary: #00b5fd;
-    --text-color-tertiary: #10d9c4; /* 青綠色系配合主色調 */
+    --text-color-tertiary: #10d9c4;
     --text-color-quaternary: #64b5f6; /* 柔和藍色 */
     --text-color-muted: #b0b0b0;
 
@@ -65,6 +65,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+  }
+
+  section{
+    padding-block: 2rem;
   }
 
   /* === 科技感網格背景 === */
@@ -151,11 +155,9 @@
   }
 
   .btn-secondary {
-    background: linear-gradient(
-      45deg,
-      var(--text-color-secondary),
-      var(--text-color-tertiary)
-    );
+    background: var(--background-color-primary);
+    border: 1px solid var(--text-color-secondary);
+    color: var(--text-color-secondary);
     box-shadow: var(--shadow-base);
   }
 
@@ -236,7 +238,6 @@
 
   .card:hover {
     box-shadow: var(--shadow-hover);
-    border-color: var(--border-color-light);
   }
 
   .card:hover::before {

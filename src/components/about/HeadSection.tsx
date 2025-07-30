@@ -1,21 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
-import { Title } from "../custom/Title";
+import { Title } from "../Index/Title";
 import { fadeInItem } from "@/libs/motion";
 
-export const TaglineSection = () => (
-  <section id="about-tagline">
+export const HeadSection = () => (
+  <section id="about-head">
     <div className="container mb-8">
       <motion.div
         className="text-center"
         initial="hiddenBottom"
-        whileInView="show"
-        viewport={{ once: true }}
+        animate="show"
         variants={fadeInItem}
         transition={{ delay: 0.1 }}
       >
-        <Title>About</Title>
-        <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-color-primary)] mt-4">
+        <Title>About us</Title>
+        <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-color-muted)] mt-4">
           We build what others imagine.
         </h2>
       </motion.div>
