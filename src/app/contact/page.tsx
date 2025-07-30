@@ -1,3 +1,11 @@
+import { ContactHeroSection } from "@/components/contact/ContactHeroSection";
+import { ContactFooterSection } from "@/components/contact/ContactFooterSection";
+
 export default function Page() {
-  return <div className="container"></div>;
+  return (
+    <main>
+      <ContactHeroSection />
+      <ContactFooterSection />
+    </main>
+  );
 }
