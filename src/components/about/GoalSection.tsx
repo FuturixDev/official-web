@@ -74,6 +74,7 @@ export const GoalSection = () => (
                 <Tooltip title={icon.title}>
                   {/*eslint-disable-next-line @next/next/no-img-element*/}
                   <img
+                    draggable={false}
                     src={icon.src}
                     alt={icon.title}
                     className="w-full h-full object-contain"

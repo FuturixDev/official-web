@@ -5,10 +5,12 @@ import { routes } from "./routes";
 import { BurgerMenu } from "./BurgerMenu";
 import Image from "next/image";
 import { NavLink } from "./NavLink";
+import { usePathname } from "next/navigation";
+import { cn } from "@/utils/className";
 
 export const Header = () => {
   const [menuShow, setMenuShow] = useState<boolean>(false);
-
+  const pathname = usePathname();
   return (
     <header className="fixed top-0 z-1080 w-full bg-[var(--background-color)]/75 backdrop-blur-md">
       <nav className="flex flex-col" role="navigation" aria-label="主導航">
@@ -38,7 +40,13 @@ export const Header = () => {
 
           <div className="hidden lg:flex text-xl font-semibold gap-6">
             {routes.map((item) => (
-              <NavLink key={item.href} href={item.href}>
+              <NavLink
+                key={item.href}
+                href={item.href}
+                className={cn({
+                  "text-[var(--text-color-primary)]": pathname === item.href,
+                })}
+              >
                 {item.label}
               </NavLink>
             ))}

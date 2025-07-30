@@ -1,7 +1,6 @@
 import { HeadSection } from "@/components/about/HeadSection";
 import { GoalSection } from "@/components/about/GoalSection";
 import { FAQSection } from "@/components/about/FAQSection";
-import { ContactSection } from "@/components/about/ContactSection";
 import "@/styles/about.css"; 
 export default function Page() {
   return (
@@ -9,7 +8,6 @@ export default function Page() {
       <HeadSection />
       <GoalSection />
       <FAQSection />
-      <ContactSection />
     </main>
   );
 }
