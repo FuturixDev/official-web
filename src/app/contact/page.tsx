@@ -1,9 +1,9 @@
-import { ContactHeroSection } from "@/components/contact/ContactHeroSection";
+import { MainSection } from "@/components/contact/MainSection";
 
 export default function Page() {
   return (
     <>
-      <ContactHeroSection />
+      <MainSection />
     </>
   );
 }

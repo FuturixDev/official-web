@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { fadeInItem } from "@/libs/motion";
 
-export const ServiceHeroSection = () => (
+export const ServicesHeroSection = () => (
   <section className="bg-black text-white py-20 min-h-[40vh] flex items-center">
     <div className="container mx-auto flex flex-col gap-12">
       <motion.h1

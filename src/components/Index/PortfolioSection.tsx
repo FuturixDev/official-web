@@ -3,7 +3,7 @@
 import { Carousel } from "@/components/custom/Carousel";
 import { DemoOutlined } from "@/components/custom/DemoOutlined";
 import { OutsideLink } from "fanyucomponents";
-import { Title } from "./Title";
+import { Title } from "../custom/Title";
 
 const portfolio = [
   {

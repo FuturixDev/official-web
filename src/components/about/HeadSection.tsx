@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Title } from "../Index/Title";
+import { Title } from "../custom/Title";
 import { fadeInItem } from "@/libs/motion";
 
 export const HeadSection = () => (

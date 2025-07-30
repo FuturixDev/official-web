@@ -1,6 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
-import { fadeInItem } from "@/libs/motion";
 
 const cases = [
   {
@@ -25,10 +23,10 @@ const cases = [
   },
 ];
 
-export const ServiceCaseSection = () => (
+export const ServicesCaseSection = () => (
   <section className="bg-black text-white py-20">
     <div className="container mx-auto flex flex-col gap-24">
-      {cases.map((item, idx) => (
+      {cases.map((item) => (
         <div
           key={item.title}
           className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${item.reverse ? 'md:flex-row-reverse' : ''}`}
@@ -50,6 +48,7 @@ export const ServiceCaseSection = () => (
           </div>
           {/* Right: Image */}
           <div className="w-full h-[340px] md:h-[420px] rounded-xl overflow-hidden flex items-center justify-center bg-black">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={item.image} alt={item.title} className="object-cover w-full h-full opacity-90" />
           </div>
         </div>
