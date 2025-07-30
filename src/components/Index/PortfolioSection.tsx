@@ -69,9 +69,19 @@ export const PortfolioSection = () => {
                         className="overlay flex flex-col items-center justify-center"
                         aria-label={`View details of project ${index + 1}`}
                       >
-                        <span className="text-xl flex items-center justify-center gap-1">
-                          View Details <DemoOutlined />
-                        </span>
+                        <div className="text-center space-y-3">
+                          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] rounded-full flex items-center justify-center shadow-lg">
+                            <DemoOutlined className="text-2xl text-white" />
+                          </div>
+                          <div className="space-y-1">
+                            <h3 className="text-xl font-semibold text-white tracking-wide">
+                              View Project
+                            </h3>
+                            <p className="text-sm text-[var(--text-color-muted)] opacity-90">
+                              Click to explore
+                            </p>
+                          </div>
+                        </div>
                       </OutsideLink>
                     </figcaption>
                   </figure>
