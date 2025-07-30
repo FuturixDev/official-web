@@ -36,7 +36,7 @@ export const Header = () => {
             />
           </div>
 
-          <div className="hidden lg:flex text-2xl font-semibold gap-6">
+          <div className="hidden lg:flex text-xl font-semibold gap-6">
             {routes.map((item) => (
               <NavLink key={item.href} href={item.href}>
                 {item.label}
@@ -51,7 +51,7 @@ export const Header = () => {
           id="mobile-nav"
           role="menu"
         >
-          <div className="flex flex-col w-full text-2xl font-semibold text-center">
+          <div className="flex flex-col w-full text-xl font-semibold text-center">
             {routes.map((item) => (
               <NavLink
                 key={item.href}
