@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
 import { email, phoneNumber } from "@/libs";
 import Link from "next/link";
-import { Title } from "./Index/Title";
+import { Title } from "./custom/Title";
 
 // 聯繫方式數據
 const contactInfo = [

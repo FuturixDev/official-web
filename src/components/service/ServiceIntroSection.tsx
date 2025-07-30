@@ -1,6 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
-import { fadeInItem } from "@/libs/motion";
 
 const icons = [
   "devicon-react-original", // React

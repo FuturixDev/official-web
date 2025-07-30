@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Title } from "../Index/Title";
+import { Title } from "../custom/Title";
 import { fadeInItem } from "@/libs/motion";
 
 const faqs = [
