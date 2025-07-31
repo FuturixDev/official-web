@@ -14,7 +14,7 @@ export const HeroSection = () => {
   return (
     <section id="hero">
       <div className="container z-10">
-        <div className="min-h-160 flex flex-col items-center justify-center text-center">
+        <div className="min-h-screen flex flex-col items-center justify-center text-center">
           {/* 主標語區域 */}
           <motion.div
             variants={fadeInItem}
@@ -22,7 +22,7 @@ export const HeroSection = () => {
             animate="show"
             className="space-y-4 max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] bg-clip-text text-transparent leading-tight">
               {slogan}
             </h1>
 
