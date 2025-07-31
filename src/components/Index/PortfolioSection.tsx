@@ -64,17 +64,17 @@ export const PortfolioSection = () => {
                       alt={`Portfolio-${index + 1} Preview`}
                     />
                     <figcaption>
-                      <OutsideLink
-                        href={item.url}
-                        className="overlay flex flex-col items-center justify-center"
-                        aria-label={`View details of project ${index + 1}`}
-                      >
-                        <div className="text-center space-y-3">
-                          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[var(--text-color-primary)] to-[var(--text-color-secondary)] rounded-full flex items-center justify-center shadow-lg">
-                            <DemoOutlined className="text-2xl text-white" />
-                          </div>
-                          <div className="space-y-1">
-                            <h3 className="text-xl font-semibold text-white tracking-wide">
+                      <div className="overlay flex flex-col items-center justify-center">
+                        <div className="flex flex-col items-center gap-3">
+                          <OutsideLink
+                            href={item.url}
+                            aria-label={`View details of project ${index + 1}`}
+                            className="btn-primary p-3 rounded-full"
+                          >
+                            <DemoOutlined className="text-4xl" />
+                          </OutsideLink>
+                          <div className="space-y-1 text-center">
+                            <h3 className="text-xl font-semibold tracking-wide">
                               View Project
                             </h3>
                             <p className="text-sm text-[var(--text-color-muted)] opacity-90">
@@ -82,7 +82,7 @@ export const PortfolioSection = () => {
                             </p>
                           </div>
                         </div>
-                      </OutsideLink>
+                      </div>
                     </figcaption>
                   </figure>
                 </article>
