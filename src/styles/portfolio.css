@@ -1,0 +1,172 @@
+/* Portfolio 頁面專用樣式 - 簡潔優雅風格 */
+#portfolio-showcase {
+  position: relative;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  #portfolio-showcase {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+}
+
+#portfolio-showcase .portfolio-card {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  #portfolio-showcase .portfolio-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+#portfolio-showcase .portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #3b82f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  #portfolio-showcase .portfolio-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    border-color: #60a5fa;
+  }
+}
+
+#portfolio-showcase .portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#portfolio-showcase .portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay 簡化 */
+#portfolio-showcase .portfolio-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(59, 130, 246, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+#portfolio-showcase .portfolio-card:hover .overlay {
+  opacity: 1;
+}
+
+/* 簡潔的文字樣式 */
+#portfolio-showcase h3 {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 簡化按鈕樣式 */
+#portfolio-showcase .view-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#portfolio-showcase .view-button:hover {
+  background: #f8fafc;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* CTA 區塊簡化 */
+.cta-section {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .cta-section {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  #portfolio-showcase .portfolio-card {
+    aspect-ratio: 1/1;
+  }
+  
+  .cta-section {
+    padding: 32px 24px;
+  }
+  
+  .cta-button {
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #portfolio-showcase .portfolio-card {
+    aspect-ratio: 4/3;
+  }
+}
+
+/* 移除所有花俏動畫 */
+/* 移除 borderRotate, glitch, matrixRain, scanLine 等動畫 */
+/* 移除 neon 效果和複雜的 transform */

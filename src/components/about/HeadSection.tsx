@@ -5,7 +5,7 @@ import { fadeInItem } from "@/libs/motion";
 
 export const HeadSection = () => (
   <section id="about-head">
-    <div className="container mb-8">
+    <div className="container mt-16 mb-8">
       <motion.div
         className="text-center"
         initial="hiddenBottom"
