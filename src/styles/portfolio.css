@@ -1,34 +1,17 @@
-/* Portfolio 頁面樣式 - 簡潔網格佈局 */
+/* Portfolio 頁面樣式 - 使用 globals.css 的 card 和 btn 系統 */
 #portfolio-showcase {
   position: relative;
   background: transparent;
 }
 
-#portfolio-showcase .portfolio-card {
-  position: relative;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  background: var(--background-color-secondary);
-  border: 2px solid var(--border-color);
-  box-shadow: var(--shadow-base);
-  transition: all var(--transition-normal) ease;
-  height: fit-content;
-}
-
-#portfolio-showcase .portfolio-card:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--border-color-light);
-}
-
-/* 圖片區域 */
+/* Portfolio 專用的圖片區域 */
 .portfolio-image {
   position: relative;
   height: 250px;
   overflow: hidden;
 }
 
-#portfolio-showcase .portfolio-card img {
+.portfolio-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -36,8 +19,25 @@
   background: var(--background-color-tertiary);
 }
 
-#portfolio-showcase .portfolio-card:hover img {
+#portfolio-showcase .card:hover .portfolio-image img {
   transform: scale(1.05);
+}
+
+/* Overlay 樣式 */
+#portfolio-showcase .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity var(--transition-normal) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+#portfolio-showcase .card:hover .overlay {
+  opacity: 1;
 }
 
 /* 卡片內容區域 */
@@ -59,87 +59,10 @@
   line-height: 1.5;
 }
 
-/* Overlay 簡潔設計 */
-#portfolio-showcase .portfolio-card .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  transition: opacity var(--transition-normal) ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-#portfolio-showcase .portfolio-card:hover .overlay {
-  opacity: 1;
-}
-
-/* 簡潔按鈕設計 */
-#portfolio-showcase .view-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--text-color-primary);
-  color: var(--background-color);
-  border: none;
-  border-radius: var(--border-radius-sm);
-  font-weight: 500;
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: all var(--transition-normal) ease;
-}
-
-#portfolio-showcase .view-button:hover {
-  background: var(--text-color-secondary);
-  transform: translateY(-2px);
-}
-
-/* CTA 區塊簡潔風格 */
-.cta-section {
-  background: var(--background-color-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: var(--border-radius-lg);
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-base);
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: var(--text-color-primary);
-  color: var(--background-color);
-  border: none;
-  border-radius: var(--border-radius-sm);
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all var(--transition-normal) ease;
-}
-
-.cta-button:hover {
-  background: var(--text-color-secondary);
-  transform: translateY(-2px);
-}
-
 /* 響應式設計 */
 @media (max-width: 768px) {
   .portfolio-image {
     height: 200px;
-  }
-  
-  .cta-section {
-    padding: 1.5rem;
-  }
-  
-  .cta-button {
-    font-size: 0.875rem;
-    padding: 0.75rem 1.5rem;
   }
   
   .portfolio-content {

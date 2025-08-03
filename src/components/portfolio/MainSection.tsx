@@ -19,7 +19,7 @@ export const MainSection = () => {
           {portfolio.map((item, index) => (
             <motion.article
               key={`${item.url}-${index}`}
-              className="portfolio-card"
+              className="card"
               variants={fadeInItem}
             >
               <div className="portfolio-image">
@@ -37,7 +37,7 @@ export const MainSection = () => {
                     <OutsideLink
                       href={item.url}
                       aria-label={`View project: ${item.title}`}
-                      className="view-button"
+                      className="btn-primary px-6 py-3 rounded-xl inline-flex items-center gap-2"
                     >
                       <span>View Project</span>
                       <DemoOutlined className="w-4 h-4" />
