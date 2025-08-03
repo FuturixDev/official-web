@@ -10,7 +10,7 @@ export const portfolio: PortfolioItem[] = [
   {
     url: "https://class.zeabur.app/",
     img: "/portfolio/class.jpg",
-    title: "Class Management Platform",
+    title: "Class Management Platform", 
     description: "Modern educational management system with class scheduling, student enrollment, and performance tracking",
   },
   {
