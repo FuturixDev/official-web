@@ -11,7 +11,7 @@ export const MainSection = () => {
     <section id="portfolio-showcase" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <motion.div
-          className="masonry-grid"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           variants={staggerContainer}
           initial="hiddenBottom"
           animate="show"
@@ -19,7 +19,7 @@ export const MainSection = () => {
           {portfolio.map((item, index) => (
             <motion.article
               key={`${item.url}-${index}`}
-              className="portfolio-card group"
+              className="portfolio-card"
               variants={fadeInItem}
             >
               <div className="portfolio-image">
@@ -28,11 +28,12 @@ export const MainSection = () => {
                   src={item.img}
                   alt={item.title || `Portfolio Project ${index + 1}`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
 
-                {/* Overlay for hover effect */}
+                {/* Overlay */}
                 <div className="overlay">
-                  <div className="text-center space-y-4">
+                  <div className="text-center">
                     <OutsideLink
                       href={item.url}
                       aria-label={`View project: ${item.title}`}
@@ -53,7 +54,6 @@ export const MainSection = () => {
             </motion.article>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
