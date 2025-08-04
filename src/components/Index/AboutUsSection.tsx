@@ -37,7 +37,7 @@ export const AboutUsSection = () => {
         >
           {/* 左側 - 標語 */}
           <motion.div variants={fadeInItem}>
-            <h2 className="text-[var(--text-color-muted)] text-5xl lg:text-6xl font-semibold text-left leading-tight">
+            <h2 className="text-[var(--text-color-muted)] text-4xl md:text-5xl lg:text-6xl font-semibold text-left leading-tight">
               {slogan}
             </h2>
           </motion.div>

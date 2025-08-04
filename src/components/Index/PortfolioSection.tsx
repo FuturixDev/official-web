@@ -4,37 +4,7 @@ import { Carousel } from "@/components/custom/Carousel";
 import { DemoOutlined } from "@/components/custom/DemoOutlined";
 import { OutsideLink } from "fanyucomponents";
 import { Title } from "../custom/Title";
-
-const portfolio = [
-  {
-    url: "https://inventory-e39j.onrender.com/dashboard.php",
-    img: "/portfolio/inventory.jpg",
-  },
-  {
-    url: "https://class.zeabur.app/",
-    img: "/portfolio/class.jpg",
-  },
-  {
-    url: "https://cashflow-system-ochre.vercel.app/",
-    img: "/portfolio/cashflow.jpg",
-  },
-  {
-    url: "https://web3-jade-eta.vercel.app/",
-    img: "/portfolio/web3.jpg",
-  },
-  {
-    url: "https://58hpi8c7e55k.manus.space/",
-    img: "/portfolio/58hpi8c7e55k.jpg",
-  },
-  {
-    url: "https://txhkngcm.manus.space/",
-    img: "/portfolio/txhkngcm.jpg",
-  },
-  {
-    url: " https://vdpfaorm.manus.space/?code=oLjRQA4thbhcHwnchwJ2p9",
-    img: "/portfolio/vdpfaorm.jpg",
-  },
-];
+import { portfolio } from "@/libs/portfolio";
 
 export const PortfolioSection = () => {
   return (
@@ -64,15 +34,25 @@ export const PortfolioSection = () => {
                       alt={`Portfolio-${index + 1} Preview`}
                     />
                     <figcaption>
-                      <OutsideLink
-                        href={item.url}
-                        className="overlay flex flex-col items-center justify-center"
-                        aria-label={`View details of project ${index + 1}`}
-                      >
-                        <span className="text-xl flex items-center justify-center gap-1">
-                          View Details <DemoOutlined />
-                        </span>
-                      </OutsideLink>
+                      <div className="overlay flex flex-col items-center justify-center">
+                        <div className="flex flex-col items-center gap-3">
+                          <OutsideLink
+                            href={item.url}
+                            aria-label={`View details of project ${index + 1}`}
+                            className="btn-primary p-3 rounded-full"
+                          >
+                            <DemoOutlined className="text-4xl" />
+                          </OutsideLink>
+                          <div className="space-y-1 text-center">
+                            <h3 className="text-xl font-semibold tracking-wide">
+                              View Project
+                            </h3>
+                            <p className="text-sm text-[var(--text-color-muted)] opacity-90">
+                              Click to explore
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </figcaption>
                   </figure>
                 </article>
