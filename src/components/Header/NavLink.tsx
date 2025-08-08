@@ -8,7 +8,7 @@ export const NavLink = ({
 }: React.ComponentPropsWithRef<typeof Link>) => (
   <Link
     className={cn(
-      `hover:scale-105 transition-transform duration-200`,
+      `hover:brightness-125 transition-all duration-200`,
       className
     )}
     {...rest}
